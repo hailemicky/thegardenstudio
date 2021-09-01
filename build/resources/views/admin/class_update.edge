@@ -1,0 +1,129 @@
+@layout('admin/layout')
+
+@section('main')
+<div class="row" onload="setSavedOption({{clase.when}},{{clase.instructor}})">
+<div class="container">
+  <div class="col-lg-9">
+   
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update  Class </h5>
+         
+        </div>
+        <form action="{{route('classUpdate',{id:clase.id})}}" method="post" role="form" enctype='multipart/form-data' >
+          <div class="modal-body">
+          
+      
+              <div class="form-group">
+                <input type="text" name="className" class="form-control" id="className" required placeholder="Class Name" value="{{clase.className}}"data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="classDetail" class="form-control" id="classDetail" required placeholder="Class Detail" value="{{clase.classDetail}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <select class="form-group" name="instructor" id="instructor">  
+                  <option value="0" selected >---Select Instructor---</option>
+                  @each(instructor in instructors)
+                  <option value="{{instructor.id}}">
+                    {{instructor.firstName}} {{instructor.lastName}}
+                  </option>
+                  @endeach
+
+                </select>     
+                
+                
+
+                <div class="validate"></div>
+              </div>
+
+
+              <div class="form-group">
+                <select class="" name="when" id="when" > 
+                  
+              
+                  <option value="0" >Upon Request</option>
+                  <option value="1"> Every Monday</option>
+                  <option value="2" >Every Tuseday</option>
+                  <option value="3" > Every Wednesday</option>  
+                  <option value="4" >Every Thursday</option>
+                  <option value="5" >Every Friday</option>
+                  <option value="6" >Every Saturday</option>
+                  <option value="7" >Every Sunday</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-group" name="type" id="type">
+                    <option value="1">Class</option>  
+                    <option value="2">Space Rental</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="time" id="time" required placeholder="Duration" value={{clase.time}} />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="price" id="price" required placeholder="Price" value={{clase.price}} />
+                <div class="validate"></div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">Update</button>
+
+              </div>
+          </div>
+          </form>
+
+        <div class="modal-body">
+            <form action="{{route('updateClassPicture',{id:clase.id})}}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="classPicture" id="classPicture">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-secondary" >Update Class Picture</button>
+          
+            </div>
+          </form>
+        </div>
+   
+
+    
+ 
+</div>
+
+    </div>
+  
+     
+</div>
+
+</div>
+  
+
+
+    
+@endsection
+
+@section('script')
+
+
+<script>
+
+function setSavedOption(when,instructor,type)
+{
+let instructorElement=document.getElementById('instructor')
+let whenElement = document.getElementById("when");
+let typeElement=document.getElementById('type')
+
+
+instructorElement.value=instructor
+whenElement.value = when;
+typeElement=type;
+
+
+}
+setSavedOption({{clase.when}},{{clase.instructor}},{{clase.type}});
+
+</script>
+
+@endsection

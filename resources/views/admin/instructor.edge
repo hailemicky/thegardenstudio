@@ -1,0 +1,139 @@
+@layout('admin/layout')
+
+@section('main')
+<div class="container">
+<!-- Button trigger modal -->
+<div class="row">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2" style="float:right">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addInstructorModal" style="position: absolute; right: 0;">
+            Add Instructor
+          </button>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+</div>
+<br><br><br>
+
+  
+  <!--Add Instructor Modal -->
+  <div class="modal fade" id="addInstructorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add  Instructor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="{{route('instructorAdd')}}" method="post" role="form" enctype='multipart/form-data' >
+        
+                <div class="form-group">
+                  <input type="text" name="firstName" class="form-control" id="name" required placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="lastName" class="form-control" id="name" required placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="title" class="form-control" id="name" required placeholder="Title" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" required placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fab fa-twitter"></i></span>
+                  </div>
+                    <input type="text" class="form-control" name="twitterUrl" id="twitterUrl" placeholder="Your twitter Url" data-rule="url"  data-msg="Please enter a valid url" />
+                    <div class="validate"></div>
+                 </div>
+                 <br>
+                 <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fab fa-facebook"></i></span>
+                  </div>
+                    <input type="text" class="form-control" name="facebookUrl" id="facebookUrl" placeholder="Your facebook Url" data-rule="url"   data-msg="Please enter a valid url" />
+                    <div class="validate"></div>
+                 </div>
+                <br>  
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fab fa-linkedin"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="linkedinUrl" id="linkedinUrl" placeholder="Your linkedin Url" data-rule="url" data-msg="Please enter a valid url" />
+                      <div class="validate"></div>
+                  </div>
+                <br>
+                 <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fab fa-instagram"></i></span>
+                  </div>
+                  <input type="text" class="form-control" name="instagramUrl" id="instagramUrl" placeholder="Your instagram Url" data-rule="url"  data-msg="Please enter a valid url" /> </i>
+                    <div class="validate"></div>
+                 </div>
+                 <br>
+                <div class="form-group">
+                  <input type="file" name="profilePicture" required class="form-control" id="profilePicture" placeholder="Profile Picture" 
+                   data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+    <!--Add Instructor Modal End -->
+
+
+<div class="container">
+<div class="row">
+    <div class="col">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">email</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+      @each(instructor in instructors)
+      <tr>
+        <th scope="row">{{instructor.id}}</th>
+        <td>{{instructor.firstName}}</td>
+        <td>{{instructor.lastName}}</td>
+        <td>{{instructor.email}}</td>
+        <td>
+            <a class="btn btn-success" href="{{route('instructorUpdateShow',{id:instructor.id})}}">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form method="POST" action="{{route('instructorDelete',{ id:instructor.id})}}">
+          <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+     @endeach
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+@endsection

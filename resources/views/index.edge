@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The Garden Studio - 614</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="The Garden Studio" name="keywords">
+        <meta content="The Garden" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        {{--  strip script  --}}
+
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+
+    <body>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <i class="far fa-clock"></i>
+                                <h2>8:00am - 10:00pm</h2>
+                                <p>Mon - Sun</p>
+                            </div>
+                            <div class="text">
+                                <i class="fa fa-phone-alt"></i>
+                                <h2>+1 614-371-5767</h2>
+                                <p>For Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand">The Garden</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#service" class="nav-item nav-link">Service</a>
+                        <a href="#class" class="nav-item nav-link">Class</a>
+                        <a href="#price" class="nav-item nav-link">Pricing</a>
+                        <a href="#team" class="nav-item nav-link">Intructors</a>
+                        <a href="#location" class="nav-item nav-link">Location</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                        
+                        <a href="{{route('loginForm')}}" class="nav-item nav-link"><i class="fa fa-user"></i>Login</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+
+        <!-- Hero Start -->
+        <div id="home" class="hero">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-text" style="">
+                            <h1>The Garden Studio</h1>
+                            <p>
+                              <br>
+                            </p>
+                            <div class="hero-btn">
+                                <a class="btn" href="#price">Join Now</a>
+                                <a class="btn" href="#contact">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{--  <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/startPage.jpeg" alt="Hero Image">
+                        </div>
+                    </div>  --}}
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- About Start -->
+        <div id= "about"class="about wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="about-img">
+                            <img src="img/about.png" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="section-header text-left">
+                            <p>Learn About Us</p>
+                            <h2>Welcome to The Garden</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>
+                                THE Garden Studios offers a place where people can learn to dance, 
+                                meet new people, have fun and feel comfortable. We offer a varied dance program with price options for all levels of interest,
+                                 with greater emphasis on group classes and small package sessions to reach dance skill objectives.
+                                  Our instructors have access to continual training with some of the area's top professional coaches. 
+                                  This provides our students with up-to-date steps technique and access to the latest dance trends.
+                                   THE Garden Studios welcomes a diverse community of people to GROW through what you GO through.
+                            </p>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Service Start -->
+        <div id="service"class="service">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>What we do</p>
+                    <h2>For Health</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-workout"></i>
+                            </div>
+                            <h3>Heal emotions</h3>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item active">
+                            <div class="service-icon">
+                                <i class="flaticon-workout-1"></i>
+                            </div>
+                            <h3>Body Refreshes</h3>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-workout-2"></i>
+                            </div>
+                            <h3>Mind & Serenity</h3>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-workout-3"></i>
+                            </div>
+                            <h3>Enjoy Your life</h3>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-workout-4"></i>
+                            </div>
+                            <h3>Body & Spirituality</h3>
+                        
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-yoga-pose"></i>
+                            </div>
+                            <h3>Body & Mind</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Class Start -->
+        <div id="class"class="class">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Our Services</p>
+                    <h2>Service</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul id="class-filter">
+                            <li data-filter="*" class="filter-active">All </li>
+                            <li data-filter=".filter-1">Classes </li>
+                            <li data-filter=".filter-2">Space Rental</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="row class-container">
+                    @each(instructor in instructors)
+                    @each(clase in instructor.classes)
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-{{clase.type}} wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="class-wrap">
+                            <div class="class-img">
+                                <img src="/uploads/{{clase.classPicture}}" alt="Image">
+                            </div>
+                            <div class="class-text">
+                                <div class="class-teacher">
+                                    <img src="/uploads/{{instructor.profilePicture}}" alt="Image">
+                                    <h3>{{instructor.firstName}} {{instructor.lastName}}</h3>
+                                   
+                                </div>
+                                <h2>{{clase.className}}</h2>
+                               <br>
+                                <div class="class-meta">
+                                    <p><i class="far fa-calendar-alt"></i>
+                                    @if(clase.when==1)
+                                    Mon
+                                    @elseif(clase.when==2)
+                                    Tue
+                                    @elseif(clase.when==3)
+                                    Wed
+                                    @elseif(clase.when==4)
+                                    Thu
+                                    @elseif(clase.when==5)
+                                    Fri
+                                    @elseif(clase.when==6)
+                                    Sat
+                                    @elseif(clase.when==7)
+                                    Sun
+                                   @else
+                                    Up on Request
+                                    @endif
+                                    
+                                    
+                                    </p>
+                                    <p><i class="far fa-clock"></i>{{clase.time}} </p>
+                                   
+                                </div>
+                                <br>
+                                <div class="class-meta">
+                                    @if(clase.when==0)
+                                        <a  class="buy_btn" href="#contact"> 
+                                            
+                                        <b>  Request </b>
+                                            </a>
+
+                                    @else
+
+                                        <a  class="buy_btn" onclick="buyButton({{clase.price}}, '{{clase.className}}','{{clase.productId}}',{{clase.when}})"> 
+                                        
+                                         <b> Register for {{clase.price}} USD</b>
+                                            </a>
+
+                                    @endif
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endeach
+                    @endeach
+                  
+                </div>
+            </div>
+        </div>
+        <!-- Class End -->
+        
+        
+    
+        
+        
+        <!-- Price Start -->
+        <div id="price" class="price">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p> Package</p>
+                    <h2> Flower Child Package</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="price-item featured-item">
+                            <div class="price-header">
+                                <div class="price-status">
+                                    <span>Popular</span>
+                                </div>
+                                <div class="price-title">
+                                    <h2>Standard</h2>
+                                </div>
+                                <div class="price-prices">
+                                    <h2><small>$</small>50<span>/ mo</span></h2>
+                                </div>
+                            </div>
+                            <div class="price-body">
+                                <div class="price-description">
+                                    <ul>
+                                        <li>Entry in to four Class per month</li>
+                                        <li>Wine Wednesday's</li>
+                                        <li>Beginners class</li>
+                                        <li>Group Training</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="price-footer">
+                                <div class="price-action">
+                                    <a  class="btn" onclick="BuyButton(9900,'Standard Package')" >Join Now<a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <!-- Price End -->
+        
+        
+
+
+        <!-- Team Start -->
+        <div id="team" class="team">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p> Trainer</p>
+                    <h2>Expert  Instructors</h2>
+                </div>
+                <div class="row">
+                    @each(instructor in instructors)
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="/uploads/{{instructor.profilePicture}}" alt="Image">
+                                <div class="team-social">
+                                    <a href="{{instructor.twitterUrl}}"><i class="fab fa-twitter"></i></a>
+                                    <a href="{{instructor.facebookUrl}}"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{instructor.linkedinUrl}}"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="{{instructor.instagramUrl}}"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-text">
+                                <h2>{{instructor.firstName}} {{instructor.lastName}}</h2>
+                                <p> {{instructor.title}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    @endeach
+  
+                   
+                </div>
+             
+                
+            </div>
+        </div>
+        <!-- Team End -->
+
+
+        <!-- Blog Start -->
+        <div id="location" class="blog">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>where we are</p>
+                    <h2>Location</h2>
+                </div>
+                <div class="row">
+                <div class="col-lg-12">
+                    <iframe 
+                        width="1000"
+                        height="450"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDKHUutbURbFuCW8_Du2iiYiFW0xflmG2M
+                            &q=Space+Needle, Reynoldsburg, OH, 43068">
+                        </iframe>
+                </div>
+            </div>
+              
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Footer Start -->
+        <div id="contact" class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="footer-info">
+                        <img src="img/logo.jpeg" alt="" style="width:400px;height:250px">
+                        {{--  <a href="index.html" class="navbar-brand">The Garden</a>  --}}
+                        <h3>6515 Livingstopm Ave, Suite B1 , Reynoldsburg, OH, 43068</h3>
+                        <div class="footer-menu">
+                            <p>+1 614-371-5767</p>
+                            <p>info@thegarden614.com</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="container">
+                            <form action="{{route('contactMail')}}" method="post" role="form" >
+                                
+                                  <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validate"></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validate"></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validate"></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                    <div class="validate"></div>
+                                  </div>
+                                 
+                                     <div class="form-group">
+                                      <div class="g-recaptcha" data-sitekey="6Lf_5CobAAAAAM36W_aMmdTgpp-oDHwM-qp0qY2A" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                                       <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                                       <div class="help-block with-errors"></div>
+                                     </div>
+                                  <div class="text-center"><button class="send_btn" type="submit">Send Message</button></div>
+                                </form>
+                        </div> 
+                    
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="#">The Garden Studio</a>, All Right Reserved.</p>
+                        </div>
+                        {{--  <div class="col-md-6">
+                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        </div>  --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        {{--  Stripe Payment checkout script  --}}
+
+        
+        
+        <script type="text/javascript">
+          
+          
+
+function getFormattedDate(today) 
+{
+    var week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    var day  = week[today.getDay()];
+    var dd   = today.getDate();
+    var mm   = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours();
+    var minu = today.getMinutes();
+
+    if(dd<10)  { dd='0'+dd } 
+    if(mm<10)  { mm='0'+mm } 
+    if(minu<10){ minu='0'+minu } 
+
+    return day+' - '+dd+'/'+mm+'/'+yyyy;
+}
+
+
+
+
+ 
+           
+          
+            function  buyButton(price, name,productId,date)
+            {
+            
+                var d = new Date();
+                d.setDate(d.getDate() + ( date + 7 - d.getDay()) % 7);
+
+
+        
+            var stripe = Stripe('pk_test_51J0U0NAHIFpzuWxfEbnUdaDYsOFB7bJW12QXlHQJpvrZQdMaUkvsF4vYgceZVvbvyJ9rOeoir1KlkZdGfqMzzinr00yTVeNZFG',{ stripeAccount:'acct_1J0WFkPF7ULKbalO'});
+          
+            let todo = {
+            price: parseInt(price+'00'),
+            name:name,
+            accountId:'acct_1J0WFkPF7ULKbalO', 
+            when:getFormattedDate(d),         
+                     };
+            fetch('/createCheckoutSession', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(todo)
+   
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(session) {
+                return stripe.redirectToCheckout({ sessionId: session.id });
+            })
+            .then(function(result) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, you should display the localized error message to your
+                // customer using `error.message`.
+                if (result.error) {
+                alert(result.error.message);
+                }
+            })
+            .catch(function(error) {
+            //    console.error('Error:', error);
+            });
+            }
+           
+        
+           
+        </script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    </body>
+</html>

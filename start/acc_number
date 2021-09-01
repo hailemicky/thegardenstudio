@@ -1,0 +1,10 @@
+acct_1J0WFkPF7ULKbalO
+
+whsec_OI6EYTFwXVvfQqb0tgXczcgn5Quuv67E
+
+
+stripe trigger --stripe-account=acct_1J0WFkPF7ULKbalO checkout.session.completed
+
+msql db user
+admin
+E45bigM478puY5n

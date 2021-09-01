@@ -1,0 +1,117 @@
+@layout('admin/layout')
+
+@section('main')
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Update  Instructor Profile</h5>
+          
+          </div>
+          <div class="modal-body">
+              <form action="{{route('packageUpdate',{id:packag.id})}}" method="post" role="form" enctype='multipart/form-data' >
+                <div class="form-group">
+                  <select name="instructor" id="instructor">
+                    @each(instructor in instructors)
+                    <option value="{{instructor.id}}">{{instructor.firstName}} {{instructor.lastName}}</option>
+                    @endeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="detail" class="form-control" id="detail" required placeholder="Package Detail"  value="{{packag.detail}}"/>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb1" class="form-control" id="atb1" required placeholder="Package included" value="{{packag.atb1}}" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb2" class="form-control" id="atb2" required placeholder="Package included" value="{{packag.atb2}}"  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb3" class="form-control" id="atb3" required placeholder="Package included" value="{{packag.atb3}}" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb4" class="form-control" id="atb4" required placeholder="Package included" value="{{packag.atb4}}" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="price" class="form-control" id="price" required placeholder="Package Price" value="{{packag.price}}"  />
+                  <div class="validate"></div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" > Update Package  </button>
+                  
+                </div>
+              </form>
+          </div>     
+            
+        
+    </div>
+    <div class="col-lg-3">
+        <div class="price-item featured-item">
+            <div class="price-header">
+                <div class="price-status">
+                    <span>Popular</span>
+                </div>
+                <div class="price-title">
+                    <h2>{{packag.detail}}</h2>
+                </div>
+                <div class="price-prices">
+                    <h2><small>$</small>{{packag.price}}<span>/ mo</span></h2>
+                </div>
+            </div>
+            <div class="price-body">
+                <div class="price-description">
+                    <ul>
+                        <li>{{packag.atb1}}</li>
+                        <li>{{packag.atb2}}</li>
+                        <li>{{packag.atb3}}</li>
+                        <li>{{packag.atb4}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="price-footer">
+                <div class="price-action">
+                    <a  class="btn" onclick="BuyButton(9900,'Standard Package')" >Join Now<a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+ </div>
+
+
+    
+
+
+
+    
+@endsection
+
+@section('script')
+
+
+<script>
+
+function setSavedOption(instructor)
+{
+let instructorElement=document.getElementById('instructor')
+
+
+
+instructorElement.value=instructor
+
+console.log(instructor)
+
+}
+setSavedOption({{packag.instructor}});
+
+</script>
+
+@endsection

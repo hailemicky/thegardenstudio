@@ -1,0 +1,120 @@
+@layout('admin/layout')
+
+@section('main')
+<div class="container">  
+<div class="row">
+    <div class="col-lg-6">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Update  Instructor Profile</h5>
+           
+          </div>
+          <form action="{{route('instructorUpdate',{id:instructor.id})}}" method="post" role="form" enctype='multipart/form-data' >
+            <div class="modal-body">
+             
+          
+                  <div class="form-group">
+                    <input type="text" name="firstName" class="form-control" id="name" required placeholder="First Name" value="{{instructor.firstName}}"data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="lastName" class="form-control" id="name" required placeholder="Last Name" data-rule="minlen:4" value="{{instructor.lastName}}" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="title" class="form-control" id="name" required placeholder="Title" data-rule="minlen:4"  value="{{instructor.title}}" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email" required placeholder="Your Email" data-rule="email" value="{{instructor.email}}"  data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fab fa-twitter"></i></span>
+                    </div>
+                      <input type="text" class="form-control" name="twitterUrl" id="twitterUrl" placeholder="Your twitter Url" data-rule="url" value="{{instructor.twitterUrl}}" data-msg="Please enter a valid url" />
+                      <div class="validate"></div>
+                   </div>
+                   <br>
+                   <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fab fa-facebook"></i></span>
+                    </div>
+                      <input type="text" class="form-control" name="facebookUrl" id="facebookUrl" placeholder="Your facebook Url" data-rule="url"  value="{{instructor.facebookUrl}}" data-msg="Please enter a valid url" />
+                      <div class="validate"></div>
+                   </div>
+                   <br>
+                   <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fab fa-linkedin"></i></span>
+                    </div>
+                        <input type="text" class="form-control" name="linkedinUrl" id="linkedinUrl" placeholder="Your linkedin Url" data-rule="url" value="{{instructor.linkedinUrl}}" data-msg="Please enter a valid url" />
+                      <div class="validate"></div>
+                   </div>
+                   <br>
+                   <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fab fa-instagram"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="instagramUrl" id="instagramUrl" placeholder="Your instagram Url" data-rule="url" value="{{instructor.instagramUrl}}" data-msg="Please enter a valid url" /> </i>
+                      <div class="validate"></div>
+                   </div>
+                   <br>
+                   <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Update</button>
+  
+                   </div>
+            </div>     
+          </form>       
+          
+          <form action="{{route('updateInstructorPicture',{id:instructor.id})}}" method="post" enctype="multipart/form-data">  
+            <div class="modal-body">
+              
+              <div class="form-group">
+                  <input type="file" name="profilePicture" id="profilePicture">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-secondary" >Update Profile Picture</button>
+            
+              </div>
+            
+            
+            </div>
+          </form>  
+          
+      </form>
+        </div>
+      </div>
+  
+    </div>
+
+    <div class="col-lg-6">
+      <div class="team">
+        <div class="container">
+                 <div class="team-item">
+                <div class="team-img">
+                    <img src="/uploads/{{instructor.profilePicture}}" alt="Image">
+                    <div class="team-social">
+                        <a href="{{instructor.twitterUrl}}"><i class="fab fa-twitter"></i></a>
+                        <a href="{{instructor.facebookUrl}}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{instructor.linkedinUrl}}"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{instructor.instagramUrl}}"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-text">
+                    <h2>{{instructor.firstName}} {{instructor.lastName}}</h2>
+                    <p> {{instructor.title}} </p>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+@endsection

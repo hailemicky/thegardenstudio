@@ -1,0 +1,126 @@
+@layout('admin/layout')
+
+@section('main')
+<div class="container">
+<!-- Button trigger modal -->
+<div class="row">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2" style="float:right">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addInstructorModal" style="position: absolute; right: 0;">
+            Add Instructor
+          </button>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+</div>
+<br><br><br>
+
+  
+  <!--Add Instructor Modal -->
+  <div class="modal fade" id="addInstructorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add  Package</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="{{route('packageAdd')}}" method="post" role="form" enctype='multipart/form-data' >
+        
+                <div class="form-group">
+                 <select name="instructor" id="instructor">
+                   @each(instructor in instructors)
+                   <option value="{{instructor.id}}">{{instructor.firstName}} {{instructor.lastName}}</option>
+                   @endeach
+                 </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="detail" class="form-control" id="detail" required placeholder="Package Detail" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb1" class="form-control" id="atb1" required placeholder="Package included"  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb2" class="form-control" id="atb2" required placeholder="Package included"  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb3" class="form-control" id="atb3" required placeholder="Package included"  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="atb4" class="form-control" id="atb4" required placeholder="Package included"  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="price" class="form-control" id="price" required placeholder="Package Price"  />
+                  <div class="validate"></div>
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+    <!--Add Instructor Modal End -->
+
+
+<div class="container">
+<div class="row">
+    <div class="col">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Detail</th>
+        <th scope="col">Package Atribute 1</th>
+        <th scope="col">Package Atribute 2</th>
+        <th scope="col">Package Atribute 3</th>
+        <th scope="col">Package Atribute 4</th>
+        <th scope="col">price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+      @each(instructor in instructors)
+      @each(package in instructor.package)
+      <tr>
+        <th scope="row">{{package.id}}</th>
+        <td>{{package.detail}}</td>
+        <td>{{package.atb1}}</td>
+        <td>{{package.atb2}}</td>
+        <td>{{package.atb3}}</td>
+        <td>{{package.atb4}}</td>
+        <td>{{package.price}}</td>
+        <td>
+            <a class="btn btn-success" href="{{route('packageUpdateShow',{id:package.id})}}">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form method="POST" action="{{route('packageDelete',{ id:package.id})}}">
+          <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      @endeach
+     @endeach
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+@endsection
